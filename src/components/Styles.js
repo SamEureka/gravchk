@@ -11,5 +11,8 @@ const styles = {
     fontSize: '1rem',
     paddingTop: '0.5rem',
   },
+  orange: {
+    color: 'orange',
+  }
 }
 module.exports = styles;

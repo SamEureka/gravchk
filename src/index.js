@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import md5 from 'md5';
+import debounce from 'lodash.debounce';
 
 import styles from './components/Styles';
 
@@ -13,11 +14,11 @@ class Hash extends Component {
         grav: '',
       }
   }
-  gen(e){
+  handleInput(e){
     const input = e.target.value;
       this.setState({
         email: input,
-        grav: md5(input),
+        grav: input === '' ? '' : md5(input),
       })
     }
 
@@ -31,17 +32,21 @@ class Hash extends Component {
           id="boom"
           type="text"
           placeholder="Enter Gravatar Id"
-          onChange={this.gen.bind(this)}>
+          onChange={debounce(this.handleInput.bind(this), 789)}>
         </input>
         <div>
             <img src={`http://www.gravatar.com/avatar/${this.state.grav}?s=200`} />
-          <div style={styles.display}>
-            Email: {this.state.email}
+          <div style={styles.display}> Email: {' '}
+            <span style={styles.orange}>
+              {this.state.email}
+            </span>
           </div>
-          <div style={styles.display}>
-            MD5 Hash: {this.state.grav}
+          <div style={styles.display}> MD5 Hash: {' '}
+              <span style={styles.orange}>
+                {this.state.grav}
+              </span>
           </div>
-          <div style={styles.display}>Don't have a Gravatar? <a href="http://en.gravatar.com">Click here!</a>
+          <div style={styles.display}>{`Don't have a Gravatar? `}<a href="http://en.gravatar.com">Click here!</a>
           </div>
         </div>
       </div>

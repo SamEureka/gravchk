@@ -1,26 +1,23 @@
-var webpack = require('webpack');
-
 module.exports = {
-  context: __dirname + '/src',
-  entry: {
-    html: './index.html',
-    javascript: './index.js'
-  },
+  entry: [
+    './src/index.js'
+  ],
   output: {
-    filename: 'bundle.js',
     path: __dirname + '/dist',
+    publicPath: '/',
+    filename: 'bundle.js'
   },
   module: {
-    loaders: [
-      {
-        test: /\.html$/,
-        loader: 'file?name=[name].[ext]',
-      },
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015'],
-      },
-    ],
+    loaders: [{
+      exclude: /node_modules/,
+      loader: 'babel'
+    }]
   },
+  resolve: {
+    extensions: ['', '.js', '.jsx']
+  },
+  devServer: {
+    historyApiFallback: true,
+    contentBase: './dist'
+  }
 };
