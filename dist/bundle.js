@@ -154,9 +154,13 @@
 	            { style: _Styles2.default.display },
 	            'Don\'t have a Gravatar? ',
 	            _react2.default.createElement(
-	              'a',
-	              { href: 'http://en.gravatar.com' },
-	              'Click here!'
+	              'div',
+	              null,
+	              _react2.default.createElement(
+	                'a',
+	                { href: 'http://en.gravatar.com' },
+	                'Click here!'
+	              )
 	            )
 	          )
 	        )

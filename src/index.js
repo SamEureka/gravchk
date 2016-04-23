@@ -46,7 +46,10 @@ class Hash extends Component {
                 {this.state.grav}
               </span>
           </div>
-          <div style={styles.display}>{`Don't have a Gravatar? `}<a href="http://en.gravatar.com">Click here!</a>
+          <div style={styles.display}>{`Don't have a Gravatar? `}
+            <div>
+              <a href="http://en.gravatar.com">Click here!</a>
+            </div>
           </div>
         </div>
       </div>
