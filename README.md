@@ -6,5 +6,5 @@ A simple Gravatar checker app. Built with React.js to exercise the use of MD5.js
 ###### Development Setup: (requires node and such)
 * *Clone*
 `git clone https://github.com/SamEureka/gravchk.git`
-* *Install dependancies* `npm install`
+* *Install dependencies* `npm install`
 * *Start* `npm start`
