@@ -126,7 +126,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          null,
-	          _react2.default.createElement('img', { src: 'http://www.gravatar.com/avatar/' + this.state.grav + '?s=200' }),
+	          _react2.default.createElement('img', { src: 'https://www.gravatar.com/avatar/' + this.state.grav + '?s=200' }),
 	          _react2.default.createElement(
 	            'div',
 	            { style: _Styles2.default.display },
@@ -158,7 +158,7 @@
 	              null,
 	              _react2.default.createElement(
 	                'a',
-	                { href: 'http://en.gravatar.com' },
+	                { href: 'https://en.gravatar.com' },
 	                'Click here!'
 	              )
 	            )
